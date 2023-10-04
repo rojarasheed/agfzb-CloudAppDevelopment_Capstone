@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dealership Review</title>
+    <title>About Us</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -23,15 +23,20 @@
           
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
               <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'djangoapp:index' %}">Home</a>
-                </li>   
                 <li class="nav-item">
+                    <a class="nav-link" href="{% url 'djangoapp:index' %}">Home</a>
+                </li>  
+                <li class="nav-item active">
                   <a class="nav-link" href="{% url 'djangoapp:about' %}">About</a>
-                </li>                
+                </li>              
               </ul>              
             </div>
         </nav>
+
+        <div class="container">
+            <h1 class="mt-5">About Us</h1>
+            <p class="lead">Welcome to Best Cars dealership, home to the best cars in North America. We sell domestic and imported cars at reasonable prices.</p>
+        </div>
         <footer class="navbar navbar-light bg-light" style="background-color:#f5f5f5;bottom:0;position:absolute;width:100%">
             <div class="container-fluid">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -44,9 +49,7 @@
                 </div>
             </div>
         </footer>
-
-    <!--Add a dealer table here -->
-
+        
     </body>
 
 </html>
