@@ -29,7 +29,25 @@
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'djangoapp:about' %}">About</a>
                 </li>                
+              </ul>
+              {% if user.is_authenticated %}
+              <ul class="navbar-nav mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="">({{ user.username }})</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light btn btn-danger" href="{% url 'djangoapp:logout' %}">Logout</a>
+                </li>  
               </ul>              
+              {% else %}   
+              <form class="form-inline my-2 my-lg-0" action="{% url 'djangoapp:login' %}" method="post">
+                {% csrf_token %}
+                <input class="form-control mr-sm-2" type="text" placeholder="Username" name="username" aria-label="Username">
+                <input class="form-control mr-sm-2" type="password" placeholder="Password" name="password" aria-label="Password">
+                <button class="btn btn-success text-light my-2 mr-2 my-sm-0" type="submit">Login</button>
+                <a class="btn btn-warning my-2 my-sm-0" href="{% url 'djangoapp:registration' %}">Sign Up</a>
+              </form>  
+              {% endif %}            
             </div>
         </nav>
         <footer class="navbar navbar-light bg-light" style="background-color:#f5f5f5;bottom:0;position:absolute;width:100%">
